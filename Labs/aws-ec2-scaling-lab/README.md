@@ -17,12 +17,14 @@ Through this lab, I successfully managed the lifecycle of an EC2 instance, modif
 
 ## 🚀 Lab Walkthrough & Tasks Implemented
 
-### Task 1 & 2: Infrastructure Initialization & Assessment
-* Launched and inspected the pre-provisioned baseline EC2 `Web Server` instance.
-* Verified configuration parameters including Public/Private IPv4 spaces and baseline instance tier (`t3.micro`).
+### Task 1 & 2: Infrastructure Automated Provisioning & Hardening
+* **Automated Bootstrapping:** Leveraged a Bash shell script via EC2 **User Data** to handle package updates, automate the installation of the Apache (`httpd`) web server daemon, and initialize the web application landing page dynamically on startup.
+* **Production Safeguards:** Enforced infrastructure stability by enabling **Termination Protection** to block accidental teardowns.
+* **Network Isolation:** Hardened the instance's security perimeter by removing standard administrative SSH access paths, shifting monitoring strategies entirely to cloud-native diagnostic tools.
 
-### Task 3: Inbound Firewall & Security Group Configuration
-* Navigated to network security settings to audit open ports and modified attached Security Group rules to safely permit inbound HTTP traffic on port 80.
+### Task 3: Security Group Auditing & Network Troubleshooting
+* **Ingress Firewall Analysis:** Audited connectivity within the custom **Lab VPC** to troubleshoot why the web server was initially unreachable from the public internet.
+* **Firewall Remediation:** Resolved network blocks by modifying the stateful AWS Security Group, introducing a targeted ingress rule to permit web traffic over HTTP (Port 80) from `0.0.0.0/0` (Anywhere-IPv4), successfully restoring application accessibility.
 
 ### Task 4: Vertical Scaling (Compute & Elastic Block Storage)
 To accommodate increased resource demand, the server environment was scaled seamlessly:
