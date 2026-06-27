@@ -31,7 +31,7 @@ To accommodate increased resource demand, the server environment was scaled seam
 3.  **Boot Verification:** Monitored the console output to verify that the upgraded kernel and expanded space initialized flawlessly.
 
 *💾 Amazon Linux System Boot Output:*
-![Amazon Linux Boot Screen](aws-linux-boot.png)
+![Amazon Linux Boot Screen](aws-linux-boot.jpg)
 
 ---
 
